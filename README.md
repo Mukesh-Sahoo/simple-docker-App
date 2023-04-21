@@ -13,31 +13,31 @@ Follow the instructions on screen one by one to complete building the image and 
 
 ## Set up ECS Cluster and Task Definition
 - Go on to the ECS AWS console, click on create cluster, and give it a name. On Infrastructure selection, keep "AWS Fargate (serverless)" selected and leave everything else to default. Click on create and your ECS cluster will be ready in few seconds.
-- Click on "Task Definitions" from the left menu and then click on "Create new task definition"
+- Click on `Task Definitions` from the left menu and then click on `Create new task definition`.
 - Give it a name.
 - On the container section, give the container a name.
-- Copy the URI from the ECR repository and fill in the "Image URI" filed with that.
-- Take the port from the Dockerfile and fill the "Container port" field with that.
-- Leave rest of the things to default and click on **Next**.
+- Copy the URI from the ECR repository and fill in the `Image URI` field with that.
+- Take the port from the Dockerfile and fill the `Container port` field with that.
+- Leave rest of the things to default and click on `Next`.
 - Reduce the CPU to .5vCPU and Memory to 2GB.
-- With the remaining set to default click on **Next**.
-- Now review and click on **Create**. 
+- With the remaining set to default click on `Next`.
+- Now review and click on `Create`. 
 
 ## Deploy the conatiner
 - Now come into the cluster created earlier.
-- Click on **Tasks** followed by "**Run new task**".
+- Click on `Tasks` followed by `Run new task`.
 - For Compute configuration select "Launch type".
-- Under Deployment configuration select **Task** as the Application type.
+- Under Deployment configuration select `Task` as the Application type.
 - On the Family dropdown select the Task Definition createed in previous steps.
 - For the Desired tasks, keep 1 for now.
 - Under Networking, let the VPC and subnet be default.
 - Create a security group and allow access to port 3000 from anywhere.
-- With the remaining left to default click on **Create**.
+- With the remaining left to default click on `Create`.
 
 ## Accessing the App
 - Now open the task created.
-- Click on **Network bindings**.
-- Copy the **External link** and open in a browser window.
+- Click on `Network bindings`.
+- Copy the `External link` and open in a browser window.
 
 ![image](https://user-images.githubusercontent.com/108973856/232814603-2dd17d5b-95d1-4b1a-8764-8364f02f5c27.png)
 
